@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the layout scale correctly on mobile phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <!-- Link to our external stylesheet (must be in the SAME folder) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- The whole app sits inside one centred card -->
+  <div class="app">
+
+    <!-- HEADER: the navy top bar with the app title -->
+    <header class="navbar">
+      <h1>🌤 Weather App</h1>
+    </header>
+
+    <!-- MAIN: holds everything the user interacts with and sees -->
+    <main>
+
+      <!-- SEARCH SECTION: input field + Search button -->
+      <section class="search">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter a city..."
+          value="Lagos"
+        />
+        <button id="searchBtn">Search</button>
+      </section>
+
+      <!-- MESSAGE AREAS: only one of these shows at a time -->
+      <!-- Loading message appears while we wait for the API -->
+      <p id="loading" class="loading hidden">Loading...</p>
+      <!-- Error message appears if the city is not found -->
+      <p id="error" class="error hidden"></p>
+
+      <!-- HERO SECTION: the big teal panel with current weather -->
+      <section class="hero" id="hero">
+        <div class="hero-icon" id="heroIcon">☀️</div>
+        <h2 class="hero-city" id="heroCity">—</h2>
+        <p class="hero-temp" id="heroTemp">—</p>
+        <p class="hero-desc" id="heroDesc">—</p>
+      </section>
+
+      <!-- STATS ROW: three equal columns -->
+      <section class="stats">
+        <div class="stat">
+          <span class="stat-label">Humidity</span>
+          <span class="stat-value" id="humidity">—</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Wind</span>
+          <span class="stat-value" id="wind">—</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">UV Index</span>
+          <span class="stat-value" id="uv">—</span>
+        </div>
+      </section>
+
+      <!-- FORECAST SECTION: 5 day rows are added here by JavaScript -->
+      <section class="forecast">
+        <h3 class="forecast-title">5-Day Forecast</h3>
+        <div id="forecastList"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Script linked at the very bottom so the HTML loads first -->
+  <script src="script.js"></script>
+</body>
+</html>
